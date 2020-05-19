@@ -3,9 +3,10 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 import appRoutes from './routes';
 
-dotenv.config({ path: path.resolve('envs', '.env') });
+dotenvExpand(dotenv.config({ path: path.resolve('envs', '.env') }));
 
 const app = express();
 
