@@ -1,5 +1,5 @@
 import request from 'supertest';
-import App from '../src/app';
+import App from '../../src/app';
 
 describe('App', () => {
   it('should starts with no errors', async () => {

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "NODE_ENV=development nodemon --exec sucrase-node ./app/server.js",
-    "test:watch": "NODE_ENV=test jest --watch"
+    "test:watch": "NODE_ENV=test jest --watch --coverage"
   },
   "dependencies": {
     "axios": "^0.19.2",

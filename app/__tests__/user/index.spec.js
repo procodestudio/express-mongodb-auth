@@ -1,6 +1,5 @@
 import request from 'supertest';
 import faker from 'faker';
-import mongoose from '../../src/database';
 import App from '../../src/app';
 
 describe('User component', () => {
@@ -11,10 +10,6 @@ describe('User component', () => {
   });
 
   describe('Register', () => {
-    afterAll(() => {
-      mongoose.disconnect();
-    });
-
     it('should not create a new user if data is missing', async () => {
       await request(App)
         .post('/user/register')

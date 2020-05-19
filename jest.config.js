@@ -15,7 +15,7 @@ module.exports = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: false,
 
   // An array of glob patterns indicating a set of files for which coverage
   // information should be collected
@@ -30,12 +30,13 @@ module.exports = {
   // ],
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
+  coverageReporters: [
   //   "json",
-  //   "text",
+    'text',
+    'html',
   //   "lcov",
   //   "clover"
-  // ],
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -131,7 +132,9 @@ module.exports = {
 
   // A list of paths to modules that run some code to configure or set up the
   // testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: [
+    './app/__tests__/setup.js',
+  ],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
@@ -147,7 +150,7 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
+    // '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[tj]s?(x)',
   ],
 
