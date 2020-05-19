@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
 import appRoutes from './routes';
 
-dotenvExpand(dotenv.config({ path: path.resolve('envs', '.env') }));
+dotenvExpand(dotenv.config({ path: path.resolve('./envs', '.env') }));
 
 const app = express();
 
