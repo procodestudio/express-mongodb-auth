@@ -4,16 +4,21 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "dotenv-expand": "^5.1.0",
     "express": "^4.17.1",
     "husk": "^0.5.3",
     "jest": "^26.0.1",
+    "mongoose": "^5.9.15",
+    "moxios": "^0.4.0",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
     "@sucrase/jest-plugin": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
