@@ -21,4 +21,36 @@ const store = (req, res) => {
   }
 };
 
-export default { store };
+const auth = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    if (!email.trim() || !password.trim()) {
+      throw new Error('Username and password are required');
+    }
+
+    const user = await User
+      .findOne({ email })
+      .select('+password');
+
+    if (!user) {
+      // eslint-disable-next-line
+      throw { code: 401, message: 'User not found' };
+    }
+
+    if (!await user.validatePassword(password)) {
+      // eslint-disable-next-line
+      throw { code: 401, message: 'Your password is wrong' };
+    }
+
+    const accessToken = user.generateToken();
+
+    res.set({ 'content-token': accessToken }).json();
+  } catch (error) {
+    res
+      .status(error.code || 500)
+      .json({ error: error.message });
+  }
+};
+
+export default { store, auth };
